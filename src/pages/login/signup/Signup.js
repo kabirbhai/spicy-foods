@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../images/logo2.png";
 
 const Signup = () => {
+  const [agree, setAgree] = useState(false);
   return (
     <section className="container">
       <div className="text-center my-5">
@@ -47,15 +48,16 @@ const Signup = () => {
           </div>
           <div class="mb-3 form-check">
             <input
+              onClick={() => setAgree(!agree)}
               type="checkbox"
               class="form-check-input"
               id="exampleCheck1"
             />
             <label class="form-check-label" for="exampleCheck1">
-              Accept trams & condition
+              Accept our trams & condition
             </label>
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button disabled={!agree} type="submit" class="btn btn-primary">
             Signup
           </button>
         </form>
