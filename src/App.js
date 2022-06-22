@@ -1,9 +1,12 @@
 import "./App.css";
+import Header from "./pages/shared/header/Header";
+import Footer from "./pages/shared/footer/Footer";
 
 function App() {
   return (
     <div>
-      <h1>This app is working</h1>
+      <Header />
+      <Footer />
     </div>
   );
 }
