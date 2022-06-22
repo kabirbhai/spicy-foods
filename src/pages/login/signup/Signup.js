@@ -1,8 +1,38 @@
 import React, { useState } from "react";
 import logo from "../../../images/logo2.png";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import {} from "firebase/auth";
 
 const Signup = () => {
   const [agree, setAgree] = useState(false);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
+
+  if (user) {
+    console.log("user", user);
+  }
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirmPassword.value;
+    if (password === confirmPassword) {
+      await createUserWithEmailAndPassword(email, password);
+      await updateProfile({
+        displayName: name,
+        photoURL: "https://i.ibb.co/SvtVPnR/spanner-33816-1280.jpg",
+      });
+    }
+    console.log(name, email, password, confirmPassword);
+  };
+
   return (
     <section className="container">
       <div className="text-center my-5">
@@ -12,52 +42,67 @@ const Signup = () => {
         <h1 className="text-center text-uppercase text-warning my-2">
           Please sign up
         </h1>
-        <form className="px-4 pb-4">
-          <div class="mb-3">
-            <label for="signupName" class="form-label">
+        <form onSubmit={handleSignup} className="px-4 pb-4">
+          <div className="mb-3">
+            <label htmlFor="signupName" className="form-label">
               Full Name
             </label>
-            <input type="text" id="signupName" class="form-control" />
+            <input
+              type="text"
+              name="name"
+              id="signupName"
+              className="form-control"
+              required
+            />
           </div>
-          <div class="mb-3">
-            <label for="signupEmail" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="signupEmail" className="form-label">
               Email address
             </label>
-            <input type="email" class="form-control" id="signupEmail" />
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              id="signupEmail"
+              required
+            />
           </div>
-          <div class="mb-3">
-            <label for="signupPassword" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="signupPassword" className="form-label">
               Password
             </label>
             <input
               type="password"
               id="signupPassword"
-              class="form-control"
+              name="password"
+              className="form-control"
               required
             />
           </div>
-          <div class="mb-3">
-            <label for="signupConfirmPassword" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="signupConfirmPassword" className="form-label">
               Confirm Password
             </label>
             <input
               type="password"
+              name="confirmPassword"
               id="signupConfirmPassword"
-              class="form-control"
+              className="form-control"
+              required
             />
           </div>
-          <div class="mb-3 form-check">
+          <div className="mb-3 form-check">
             <input
               onClick={() => setAgree(!agree)}
               type="checkbox"
-              class="form-check-input"
+              className="form-check-input"
               id="exampleCheck1"
             />
-            <label class="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Accept our trams & condition
             </label>
           </div>
-          <button disabled={!agree} type="submit" class="btn btn-primary">
+          <button disabled={!agree} type="submit" className="btn btn-primary">
             Signup
           </button>
         </form>
