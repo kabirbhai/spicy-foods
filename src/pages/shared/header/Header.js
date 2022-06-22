@@ -1,6 +1,7 @@
-import { Avatar, Badge } from "@mui/material";
+import { Avatar } from "@mui/material";
 import profile from "../../../images/me.jpg";
 import logo from "../../../images/logo.png";
+import { Link } from "react-router-dom";
 
 import React from "react";
 
@@ -21,19 +22,28 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="#">
+            <Link to="/" className="navbar-brand">
               <img height={40} src={logo} alt="Logo" />
-            </a>
+            </Link>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link
+                  to="/home"
+                  className="nav-link  text-warning active"
+                  aria-current="page"
+                >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link to="/login" className="nav-link  text-warning">
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/signup" className="nav-link  text-warning">
+                  Signup
+                </Link>
               </li>
             </ul>
 
