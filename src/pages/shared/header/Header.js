@@ -1,11 +1,14 @@
 import { Avatar } from "@mui/material";
-import profile from "../../../images/me.jpg";
 import logo from "../../../images/logo.png";
 import { Link } from "react-router-dom";
 
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-dark">
@@ -49,7 +52,7 @@ const Header = () => {
 
             <Avatar
               alt="Remy Sharp"
-              src={profile}
+              src={user?.photoURL}
               sx={{ width: 56, height: 56 }}
             />
           </div>
