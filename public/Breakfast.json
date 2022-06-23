@@ -3,54 +3,63 @@
     "id": 1,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/nPv391z/breakfast6.png"
+    "img": "https://i.ibb.co/nPv391z/breakfast6.png",
+    "price": "$99"
   },
   {
     "id": 2,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/nPv391z/breakfast6.png"
+    "img": "https://i.ibb.co/nPv391z/breakfast6.png",
+    "price": "$89"
   },
   {
     "id": 3,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/yFc405X/breakfast1.png"
+    "img": "https://i.ibb.co/yFc405X/breakfast1.png",
+    "price": "$100"
   },
   {
     "id": 4,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/Mhw4Fm4/breakfast2.png"
+    "img": "https://i.ibb.co/Mhw4Fm4/breakfast2.png",
+    "price": "$92"
   },
   {
     "id": 5,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/ZXWHpWc/breakfast3.png"
+    "img": "https://i.ibb.co/ZXWHpWc/breakfast3.png",
+    "price": "$200"
   },
   {
     "id": 6,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/yNWz3pT/breakfast4.png"
+    "img": "https://i.ibb.co/yNWz3pT/breakfast4.png",
+    "price": "$233"
   },
   {
     "id": 7,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/JdkCRvn/breakfast5.png"
+    "img": "https://i.ibb.co/JdkCRvn/breakfast5.png",
+    "price": "$929"
   },
   {
     "id": 8,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/nPv391z/breakfast6.png"
+    "img": "https://i.ibb.co/nPv391z/breakfast6.png",
+    "price": "$193"
   },
   {
     "id": 9,
     "title": "This is title",
     "desc": "This is description",
-    "img": "https://i.ibb.co/nPv391z/breakfast6.png"
+    "img": "https://i.ibb.co/nPv391z/breakfast6.png",
+    "price": "$99"
   }
 ]

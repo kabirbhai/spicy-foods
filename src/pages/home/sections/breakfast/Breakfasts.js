@@ -1,19 +1,19 @@
 import React from "react";
 import useBreakfast from "../../../../hooks/useBreakfast";
+import Breakfast from "./Breakfast";
 
 const Breakfasts = () => {
   const [Breakfasts] = useBreakfast([]);
-  console.log(Breakfasts);
 
   return (
-    <div>
+    <section>
       <h1>Breakfast</h1>
-      <div>
+      <div className="container gy-4 mx-auto row">
         {Breakfasts.map((b) => (
-          <div key={b.id}></div>
+          <Breakfast key={b.id} breakfast={b} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
