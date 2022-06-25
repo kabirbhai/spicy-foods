@@ -1,11 +1,19 @@
 import React from "react";
+import Dinner from "./Dinner";
+import useDinner from "../../../../hooks/useDinner";
 
-const Dinner = () => {
+const Dinners = () => {
+  const [dinners] = useDinner([]);
+
   return (
-    <div>
-      <h1>Dinner</h1>
-    </div>
+    <section>
+      <div className="container gy-4 mx-auto row">
+        {dinners.map((d) => (
+          <Dinner key={d._id} dinner={d} />
+        ))}
+      </div>
+    </section>
   );
 };
 
-export default Dinner;
+export default Dinners;

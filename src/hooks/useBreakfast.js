@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
 const useBreakfast = () => {
-  const [Breakfasts, setBreakfasts] = useState([]);
-  console.log(Breakfasts);
+  const [breakfasts, setBreakfasts] = useState([]);
 
   useEffect(() => {
-    fetch("Breakfast.json")
+    fetch("http://localhost:5000/breakfast")
       .then((res) => res.json())
       .then((data) => setBreakfasts(data));
   }, []);
-  return [Breakfasts, setBreakfasts];
+  return [breakfasts, setBreakfasts];
 };
 export default useBreakfast;

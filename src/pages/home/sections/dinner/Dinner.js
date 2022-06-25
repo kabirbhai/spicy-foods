@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Breakfast = ({ breakfast }) => {
-  const { title, desc, img, price } = breakfast;
+const Dinner = ({ dinner }) => {
+  const { title, desc, img, price } = dinner;
   return (
     <section className="col-12 col-md-4 col-lg-3">
       <div
@@ -23,4 +23,4 @@ const Breakfast = ({ breakfast }) => {
   );
 };
 
-export default Breakfast;
+export default Dinner;
